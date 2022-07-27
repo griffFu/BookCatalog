@@ -13,6 +13,51 @@
         <div class="book">
         </div>
     </div>
-    <div class="button"><button>Add Book</button></div>
+    
+<!-- Trigger/Open The Modal -->
+    <button id="myBtn">Open Modal</button>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>Recall a book?</h2>
+        </div>
+        <form>
+            <div class="modal-body">
+            
+                <div class="first-last">
+                    <p>
+                        <label for="bookTitle">
+                            <span>Title:</span>
+                        </label>
+                        <input type="text" id="bookTitle" name="title">
+                    </p>
+                    <p>
+                        <label for="bookAuthor">
+                            <span>Author:</span>
+                        </label>
+                        <input type="text" id="bookAuthor" name="author">
+                    </p>
+                    <p>
+                        <label for="length">
+                            <span>Pages:</span>
+                        </label>
+                        <input type="number" id="length" name="length">
+                    </p>
+            </div>
+            <div class="modal-footer">
+                <p>
+                    <button onclick="returnBook()" type="Submit">Add Book</button>
+                </p>
+            </div>
+        </form>
+    </div>      
+
+</div>
+
 </body>
 </html>
