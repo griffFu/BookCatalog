@@ -4,15 +4,18 @@ let myLibrary = []
 
 //grabbing the elements from the HTML
 const bookCard = document.querySelector('.book');
-bookCard.textContent = "hey"
+
+
+
 
 
 
 //creating the constructor, will take in the title and author of the book
-function book(title,author,pages){
+function book(title,author,pages,read){
     this.title = title;
     this.author = author;
     this.pages = pages;
+    this.read = read;
 }
 
 //creating the class objects
@@ -31,50 +34,58 @@ function addBookToLibrary(entry){
     let titleCard = document.createElement('P');
     let authorCard = document.createElement('P');
     let pagesCard = document.createElement('P');
+    let readButton = document.createElement('button');
 
+    readButton.setAttribute('id','readButton');
+    if(entry.read == true){
+      readButton.style.background = '#AEAA6C'
+      readButton.textContent = 'Read'
+    }
+    else {
+      readButton.style.background = '#B2755E'
+      readButton.textContent = 'unread'
+    }
+    
+    readButton.addEventListener('click', function onClick() {
+      if(entry.read == true){
+          readButton.style.background = '#B2755E'
+          readButton.textContent = 'unread'
+          entry.read = false
+      }
+      else {
+        readButton.style.background = '#AEAA6C'
+        readButton.textContent = 'read'
+        entry.read = true
+      }
+      /*
+      readButton.innerHTML = `read ${entry.read}`
+      readButton.style.background = readButton.style.background == 'green' ? 'red' : 'green'
+      readButton.textContent = readButton.textContent == 'read' ? 'unread': 'read'
+      console.log("made it here")
+      */
+    });
+  
+    
+    
+    
     //adding the text content to the box from the object
     titleCard.innerHTML = `Title: ${entry.title}`
     authorCard.innerHTML = `Author: ${entry.author}`
     pagesCard.innerHTML = `Pages: ${entry.pages}`
     
     
+    
     //adding all of these values to the HTML
     newEntry.appendChild(titleCard);
     newEntry.appendChild(authorCard);
     newEntry.appendChild(pagesCard);
+    newEntry.appendChild(readButton);
     bookCard.appendChild(newEntry);
 
     
     
     
 }
-
-// quick test to make sure the books will populate if given the correct information
-addBookToLibrary(book1);
-addBookToLibrary(book2);
-
-
-
-
-
-//function for the button in the form to return the object info 
-/*
-function returnBook(){
-    let newBook = document.getElementById(bookTitle);
-
-}
-
-bookCard.innerHTML += newBook;
-*/
-//takes user to an input form
-
-//input form takes the values and converts them into an object using the class constructor of book
-
-//calls add book to library function
-
-
-
-
 
 
 //generates the modal with the form in it
@@ -113,13 +124,15 @@ function returnBook(){
     let newBook = document.getElementById("bookTitle");
     let newAuthor = document.getElementById("bookAuthor");
     let newPages = document.getElementById("length");
+    let newRead = document.getElementById("readStatus")
 
-    let bookEntry = new book(newBook.value,newAuthor.value,newPages.value)
+    let bookEntry = new book(newBook.value,newAuthor.value,newPages.value,newRead.checked)
     addBookToLibrary(bookEntry)
 
     newBook.value = ""
     newAuthor.value = ""
     newPages.value = ""
+    newRead.checked = false;
 
 
 

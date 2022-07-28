@@ -9,14 +9,18 @@
     <title>Document</title>
 </head>
 <body>
+
+    <div class="header">Library App</div>
+    <div class="book-button">
+        <button id="myBtn">Add Book</button>
+    </div>
     <div class="catalog">
         <div class="book">
         </div>
     </div>
     
 <!-- Trigger/Open The Modal -->
-    <button id="myBtn">Open Modal</button>
-
+    
     <!-- The Modal -->
     <div id="myModal" class="modal">
 
@@ -47,6 +51,12 @@
                             <span>Pages:</span>
                         </label>
                         <input type="number" id="length" name="length">
+                    </p>
+                    <p>
+                        <label for="readStatus">
+                            <span>Read:</span>
+                        </label>
+                        <input type="checkbox" id="readStatus" name="readStatus">
                     </p>
             </div>
             <div class="modal-footer">

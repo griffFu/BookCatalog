@@ -1,17 +1,27 @@
 
+
+body {
+    background-color: #90A4AE;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+
+}
 .catalog{
     display: grid;
+    padding: 125px;
 }
 
 
 .book{
+  display: grid;
+  grid-template-columns: repeat(5,1fr);
+  margin: 20px;
+
+  
     
 }
 
 
 .book div{
-    width: 400px;
-    height: 400px;
     border-style: solid;
     border-color: black;
     margin: 10px;
@@ -19,15 +29,56 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #607D8B;
+    border-radius: 20px; 
 }
 
 
+#readButton{
+   background-color: green;
+   margin: 10px;
+   padding: 6px;
+   border-radius: 10px;
+   border-style: solid;
+   font-size:1rem;
+}
+
+/*
+#readButton:focus{
+    
+
+  
+}
+*/
 .addBook{
     
 }
 
+.header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size:2rem;
+  padding: 20px;
+}
 
+.book-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
 
+#myBtn{
+  color: #212121;
+  padding: 20px;
+  background-color: #546E7A;
+  font-family: "Comic Sans MS";
+  border-radius: 60px;
+  border-style: solid;
+  border-color: #263238;
+
+}
 
 
 
